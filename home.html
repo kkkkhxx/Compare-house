@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เปรียบเทียบสเปคบ้าน</title>
+    <link rel="stylesheet" href="../CSS/home.css">
+
+</head>
+
+<body>
+    <header data-title="' เปรียบเทียบบ้านให้ฝันของคุณ '"
+        header-subtitle="เปรียบเทียบบ้านง่ายๆ พร้อมดูเรตติ้งบ้านที่คุณสนใจ ช่วยตัดสินใจเลือกบ้านที่ใช่ ครบจบในเว็บเดียวสำหรับคนซื้อบ้านยุคใหม่">
+    </header>
+
+    <main>
+        <div class="container1">
+            <div class="AddHouse">
+                <h3>ข้อมูลบ้าน</h3>
+                <div class="buttons">
+                    <button id="addBtn" type="button">เพิ่มข้อมูล</button>
+                    <button id="clearBtn" type="button">ลบข้อมูล</button>
+                </div>
+            </div>
+
+            <div id="add-home-box" class="add-home-box">
+                <p>เพิ่มข้อมูลโครงการเพื่อเปรียบเทียบ</p>
+            </div>
+
+            <!-- 📌 Template -->
+            <template id="home-card-template">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="" alt="Avatar">
+                    </div>
+                    <input type="checkbox" name="house">
+                    <div class="details"></div>
+                </div>
+            </template>
+
+            <!-- 🏡 บ้านที่เพิ่มจะถูกแสดงตรงนี้ -->
+            <div id="cardList"></div>
+
+            <div class="compare">
+                <button type="button">เปรียบเทียบ</button>
+            </div>
+        </div>
+
+        <div class="container2">
+            <div class="article">
+                <h3>บทความ</h3>
+                <div class="article-links">
+                    <div class="article-link">บทความ 1</div>
+                    <div class="article-link">บทความ 1</div>
+                    <div class="article-link">บทความ 1</div>
+                </div>
+                <div class="foward-mainweb">บทความอื่นๆ คลิกที่นี่</div>
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+</body>
+<script src="../component/loadFooter.js"></script>
+<script src="../component/loadHeader.js"></script>
+<script src="../js/homeData.js"></script>
+<script src="../js/addHome.js"></script>
+<script src="../js/compare.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const compareBtn = document.querySelector(".compare button");
+        const homes = JSON.parse(localStorage.getItem("homes") || "[]");
+
+        if (homes.length >= 2) {
+            compareBtn.style.display = "block"; // แสดงปุ่ม
+        } else {
+            compareBtn.style.display = "none";  // ซ่อนปุ่ม
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const homes = JSON.parse(localStorage.getItem("homes") || "[]");
+        const box = document.getElementById("add-home-box");
+
+        if (homes.length >= 1) {
+            box.style.display = "none";
+        }
+
+        box.addEventListener("click", () => {
+            window.location.href = "add.html"; // หรือเรียกฟังก์ชัน addHome() ก็ได้
+        });
+    });
+
+</script>
+
+
+</html>
