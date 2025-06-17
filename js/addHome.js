@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         localStorage.setItem("homes", JSON.stringify(homes));
         localStorage.removeItem("editIndex");
-        window.location.href = "../HTML/home.html";
+        window.location.href = "../index.html";
     });
 
     // 🔧 ฟังก์ชันลดขนาดภาพก่อนเก็บ base64
