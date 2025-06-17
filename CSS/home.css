@@ -1,0 +1,228 @@
+@font-face {
+    font-family: 'FC Sound';
+    src: url('../assets/font/FCSound-Regular.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'FC Sound', sans-serif;
+}
+
+main {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*---------------------- Add House ----------------------*/
+.AddHouse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.AddHouse .buttons {
+    display: flex;
+    gap: 8px;
+    /* ระยะห่างระหว่างปุ่ม */
+}
+
+.AddHouse .buttons button {
+    padding: 2px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    /*สีพื้นหลังของปุ่ม*/
+    color: white;
+    /*สีตัวอักษรของปุ่ม*/
+    font-size: 14px;
+    font-weight: regular;
+}
+
+#clearBtn {
+    color: #af4c4c;
+    border: 1px solid #af4c4c;
+    background-color: white;
+}
+
+#addBtn {
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+    background-color: #ffffff;
+}
+
+#clearBtn:active {
+    background-color: #af4c4c;
+    color: white;
+}
+
+#addBtn:active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/*---------------------- Card ----------------------*/
+.card {
+    border: 0.5px solid #ccc;
+    border-radius: 10px;
+    transition: 0.3s;
+    width: 40%;
+    position: relative;
+    margin: 10px;
+}
+
+.card input[type=checkbox] {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* << ตรงนี้จะชิดขวา */
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.card-image {
+    display: flex;
+    justify-content: center;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+
+}
+
+.details {
+    padding: 10px;
+    box-shadow: #b8beb8a8 0px 0px 5px;
+    border-radius: 0px 0px 10px 10px;
+    font-size: 14px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+#cardList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*---------------------- Compare ----------------------*/
+.add-home-box {
+    border: 2px dashed #e8f3ff;
+    border-radius: 10px;
+    padding: 50px;
+    text-align: center;
+    color: #c0c0c0;
+    cursor: pointer;
+    margin: 10px 5px 0 5px;
+    font-weight: lighter;
+}
+
+/*---------------------- Compare ----------------------*/
+.compare {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+.compare button {
+    padding: 8px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 12px;
+    font-weight: medium;
+    background-color: rgb(11, 131, 230);
+    border: none;
+}
+
+.compare button:active {
+    background-color: #164894;
+    color: white;
+}
+
+/*---------------------- บทความ ----------------------*/
+.article-link {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    font-weight: light;
+    font-size: 14px;
+}
+
+.foward-mainweb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: rgb(11, 131, 230);
+    font-weight: light;
+}
+
+/*---------------------- เว็บไซต์ ----------------------*/
+@media (min-width: 768px) {
+    main {
+        max-width: 1024px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .compare {
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .card {
+        width: 300px;
+        /* กำหนดขนาดคงที่ของการ์ด */
+        flex: 0 0 auto;
+        /* ไม่ยืดหรือหด */
+    }
+
+    .card-image img {
+        height: 180px;
+        object-fit: cover;
+    }
+
+    .AddHouse {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 0;
+    }
+
+    .AddHouse h3 {
+        font-size: 20px;
+    }
+
+    .AddHouse .buttons button {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .details {
+        font-size: 14px;
+    }
+
+    .foward-mainweb {
+        font-size: 14px;
+    }
+
+    footer {
+        height: 180px;
+        font-size: 14px;
+    }
+}
