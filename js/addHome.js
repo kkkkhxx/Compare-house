@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
             imageBase64 = homes[editIndex].imageBase64;
         } else {
             // imageBase64 = null;
-            imageBase64 = "../assets/photo/default.png";
+            imageBase64 = "/assets/photo/default.png";
         }
 
         // ดึงค่าทุก input/select ลง formData
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         localStorage.setItem("homes", JSON.stringify(homes));
         localStorage.removeItem("editIndex");
-        window.location.href = "../index.html";
+        window.location.href = "/index.html";
     });
 
     // 🔧 ฟังก์ชันลดขนาดภาพก่อนเก็บ base64
