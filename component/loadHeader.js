@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector("header");
     if (header) {
-        fetch("/component/header.html")
+        fetch("component/header.html")
             .then(res => res.text())
             .then(html => {
                 const parser = new DOMParser();
