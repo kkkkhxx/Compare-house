@@ -17,6 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const checkboxes = cardList.querySelectorAll("input[type='checkbox']:checked");
             if (checkboxes.length === 0) return;
 
+            // ✅ กล่องยืนยันก่อนลบ
+            const confirmDelete = confirm("คุณต้องการลบข้อมูลบ้านที่เลือกใช่หรือไม่?");
+            if (!confirmDelete) return;
+
             const checkedIndexes = Array.from(checkboxes).map(checkbox =>
                 parseInt(checkbox.dataset.index)
             );
