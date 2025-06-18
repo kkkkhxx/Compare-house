@@ -173,7 +173,7 @@ form {
     max-width: 40%;
 }
 
-#form-structural select {
+#form-structural select, #form-roof select {
     flex: 1;
     padding: 6px;
     border-radius: 4px;
