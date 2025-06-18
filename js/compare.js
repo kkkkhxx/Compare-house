@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // ➔ รูปภาพ
         const imageCell = document.createElement("td");
         const img = document.createElement("img");
-        img.src = home.imageBase64 || "/assets/photo/default.png";
+        img.src = home.imageBase64 || "assets/photo/default.png";
         img.alt = home.name;
         img.style.maxWidth = "100px";
         imageCell.appendChild(img);
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const iconDiv = document.createElement("div");
             iconDiv.className = "label-icon";
             const icon = document.createElement("img");
-            icon.src = `/assets/icon/${opt.folder}/${opt.icon}`;
+            icon.src = `assets/icon/${opt.folder}/${opt.icon}`;
             icon.alt = opt.label;
             icon.style.width = "24px";
             iconDiv.appendChild(icon);
