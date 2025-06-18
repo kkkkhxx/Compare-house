@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (addBtn) {
         addBtn.addEventListener("click", () => {
             localStorage.removeItem("editIndex");
-            window.location.href = "add.html";
+            window.location.href = "./add.html";
         });
     }
 
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         card.addEventListener("click", (e) => {
             if (e.target.tagName.toLowerCase() !== "input") {
                 localStorage.setItem("editIndex", index);
-                window.location.href = "add.html";
+                window.location.href = "./add.html";
             }
         });
 
