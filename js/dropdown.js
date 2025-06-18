@@ -32,23 +32,24 @@ function renderFormGroups() {
 
         group.options.forEach(opt => {
             let row;
+            const type = opt.type || group.type;
 
-            if (group.type === 'textOnly') {
+            if (type === 'textOnly') {
                 row = document.createElement('div');
                 row.className = 'form-row';
                 row.innerHTML = `<div class="icon">
-            <img src="assets/icon/${opt.folder}/${opt.icon}" alt="${opt.label}"></div>
-            <label>${opt.label}</label>
-            <input type="text" name="${opt.name}" placeholder="กรอกข้อมูล">`;
+                    <img src="../assets/icon/${opt.folder}/${opt.icon}" alt="${opt.label}"></div>
+                    <label>${opt.label}</label>
+                    <input type="text" name="${opt.name}" placeholder="กรอกข้อมูล">`;
             }
-            else if (group.type === 'select') {
+            else if (type === 'select') {
                 row = document.createElement('div');
                 row.className = 'form-row';
 
                 const iconDiv = document.createElement('div');
                 iconDiv.className = 'icon';
                 const icon = document.createElement('img');
-                icon.src = `assets/icon/${opt.folder}/${opt.icon}`;
+                icon.src = `../assets/icon/${opt.folder}/${opt.icon}`;
                 icon.alt = opt.label;
                 iconDiv.appendChild(icon);
 
@@ -78,7 +79,7 @@ function renderFormGroups() {
             }
             else {
                 const clone = template.content.cloneNode(true);
-                clone.querySelector('img').src = `assets/icon/${opt.folder}/${opt.icon}`;
+                clone.querySelector('img').src = `../assets/icon/${opt.folder}/${opt.icon}`;
                 clone.querySelector('img').alt = opt.label;
                 clone.querySelector('label').textContent = opt.label;
                 clone.querySelector('input[type="checkbox"]').name = opt.name;
@@ -90,6 +91,72 @@ function renderFormGroups() {
         });
     });
 }
+
+
+// formGroups.forEach(group => {
+//     const container = document.getElementById(group.containerId);
+//     if (!container) return;
+
+//     group.options.forEach(opt => {
+//         let row;
+
+//         if (group.type === 'textOnly') {
+//             row = document.createElement('div');
+//             row.className = 'form-row';
+//             row.innerHTML = `<div class="icon">
+//         <img src="../assets/icon/${opt.folder}/${opt.icon}" alt="${opt.label}"></div>
+//         <label>${opt.label}</label>
+//         <input type="text" name="${opt.name}" placeholder="กรอกข้อมูล">`;
+//         }
+//         else if (group.type === 'select') {
+//             row = document.createElement('div');
+//             row.className = 'form-row';
+
+//             const iconDiv = document.createElement('div');
+//             iconDiv.className = 'icon';
+//             const icon = document.createElement('img');
+//             icon.src = `../assets/icon/${opt.folder}/${opt.icon}`;
+//             icon.alt = opt.label;
+//             iconDiv.appendChild(icon);
+
+//             const label = document.createElement('label');
+//             label.textContent = opt.label;
+
+//             const select = document.createElement('select');
+//             select.name = opt.name;
+
+//             const placeholderOption = document.createElement('option');
+//             placeholderOption.value = "";
+//             placeholderOption.textContent = "เลือกประเภท";
+//             placeholderOption.disabled = true;
+//             placeholderOption.selected = true;
+//             select.appendChild(placeholderOption);
+
+//             opt.choices.forEach(choice => {
+//                 const option = document.createElement('option');
+//                 option.value = choice;
+//                 option.textContent = choice;
+//                 select.appendChild(option);
+//             });
+
+//             row.appendChild(iconDiv);
+//             row.appendChild(label);
+//             row.appendChild(select);
+//         }
+//         else {
+//             const clone = template.content.cloneNode(true);
+//             clone.querySelector('img').src = `../assets/icon/${opt.folder}/${opt.icon}`;
+//             clone.querySelector('img').alt = opt.label;
+//             clone.querySelector('label').textContent = opt.label;
+//             clone.querySelector('input[type="checkbox"]').name = opt.name;
+//             clone.querySelector('input[type="text"]').name = `${opt.name}_detail`;
+//             row = clone;
+//         }
+
+//         container.appendChild(row);
+//     });
+// });
+// }
 
 function setupDropdownToggle() {
     document.querySelectorAll('.dropdown-selected').forEach(selected => {
@@ -132,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const preview = document.getElementById("image_preview");
             if (preview && home.imageName) {
-                preview.src = `assets/photo/${home.imageName}`;
+                preview.src = `../assets/photo/${home.imageName}`;
                 preview.style.display = "block";
             }
         }

@@ -86,5 +86,10 @@ window.itemScoreMap = {
     wash_structure: {
         "ลงเสาเข็ม": 1.125,
         "ไม่ลงเสาเข็ม": 0.0
+    },
+    Fiberglass_Insulation: {
+        "Stay Cool": 1.0,
+        "Reflector": 0.6,
+        "ฝ้า": 0.3
     }
 };

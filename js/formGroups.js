@@ -68,7 +68,7 @@ window.formGroups = [
             { label: "ประกันโครงสร้าง 5 ปี", name: "Structural_Defects", icon: "warranty.png", folder: "warranty" },
             { label: "ประกันงานสถาปัตยกรรม 1 ปี", name: "Non_Structural_Defects", icon: "warranty.png", folder: "warranty" }
         ],
-        type: "Checkbox",
+        type: "Checkbox"
     },
     {
         title: "งานประปา, สุขาภิบาล (Plumbing-Sanitary)",
@@ -81,18 +81,24 @@ window.formGroups = [
             { label: "ปั้มน้ำอัตโนมัติ", name: "Water_Pump", icon: "pump.png", folder: "plumbing" },
             { label: "ระบบท่อปลวก", name: "Pipe_Termites", icon: "pipe termites.png", folder: "plumbing" },
         ],
-        type: "Checkbox",
+        type: "Checkbox"
     },
     {
         title: "งานหลังคา (Roofing)",
         containerId: "form-roof",
         options: [
-            { label: "หลังคาโซลาร์เซลล์", name: "Solar_Rooftop", icon: "solar rooftop.png", folder: "roof" },
-            { label: "ฉนวนกันความร้อนใต้หลังคา", name: "Fiberglass_Insulation", icon: "fiberglass.png", folder: "roof" },
-            { label: "ระบบระบายความร้อนใต้หลังคา", name: "RoofTile_Ventilator", icon: "roof tile.png", folder: "roof" },
-            { label: "ฝ้าระบายอากาศเหนือฝ้าชายคา ", name: "Roof_Ventilation ", icon: "ventilation.png", folder: "roof" },
-        ],
-        type: "Checkbox",
+            {
+                label: "ฉนวนกันความร้อนใต้หลังคา",
+                name: "Fiberglass_Insulation",
+                icon: "fiberglass.png",
+                folder: "roof",
+                choices: ["Stay Cool", "Reflector", "ฝ้า"],
+                type: "select"
+            },
+            { label: "หลังคาโซลาร์เซลล์", name: "Solar_Rooftop", icon: "solar rooftop.png", folder: "roof", type: "Checkbox" },
+            { label: "ระบบระบายความร้อนใต้หลังคา", name: "RoofTile_Ventilator", icon: "roof tile.png", folder: "roof", type: "Checkbox" },
+            { label: "ฝ้าระบายอากาศเหนือฝ้าชายคา ", name: "Roof_Ventilation ", icon: "ventilation.png", folder: "roof", type: "Checkbox" },
+        ]
     },
     {
         title: "งานไฟฟ้า (Electrical)",
@@ -101,7 +107,7 @@ window.formGroups = [
             { label: "มิเตอร์ไฟ", name: "meter", icon: "meter.png", folder: "eletrical" },
             { label: "เมนเบรกเกอร์ไฟ", name: "cb", icon: "cb.png", folder: "eletrical" },
             { label: "ไฟฉุกเฉิน", name: "emergency_light", icon: "emergency light.png", folder: "eletrical" },
-            { label: "เครื่องชาร์ทรถยนต์ไฟฟ้า", name: "ev_charger", icon: "ev charger.png", folder: "eletrical" },
+            { label: "บล็อกไฟ EV Charger", name: "ev_charger", icon: "ev charger.png", folder: "eletrical" },
             { label: "มอเตอร์ประตูรั้ว", name: "door_automatic", icon: "door automatic.png", folder: "eletrical" },
             { label: "เบรกเกอร์กันดูดชั้น 1", name: "rcd1", icon: "rcd.png", folder: "eletrical" },
             { label: "เบรกเกอร์กันดูดชั้น 2", name: "rcd2", icon: "rcd.png", folder: "eletrical" },
@@ -113,7 +119,7 @@ window.formGroups = [
             { label: "ระบบสาย LAN", name: "lan_cable", icon: "lan cable.png", folder: "eletrical" },
             { label: "บ่อกราวน์", name: "earth_pit", icon: "earth pit.png", folder: "eletrical" },
         ],
-        type: "Checkbox",
+        type: "Checkbox"
     },
     {
         title: "นวัตกรรม (Living Soloution)",
@@ -129,7 +135,7 @@ window.formGroups = [
             { label: "แอพพลิเคชั่นตัวบ้าน", name: "House_Appllication", icon: "house app.png", folder: "solution" },
             { label: "ระบบกรองอากาศในบ้าน", name: "Air_Quality", icon: "air quality.png", folder: "solution" },
         ],
-        type: "Checkbox",
+        type: "Checkbox"
     },
     {
         title: "งานอื่นๆ (Utility)",
@@ -137,12 +143,12 @@ window.formGroups = [
         options: [
             { label: "ตู้ไปรษณีย์", name: "mailbox", icon: "mailbox.png", folder: "utility" },
             { label: "ถังขยะ", name: "bin", icon: "rubbish bin.png", folder: "utility" },
-            { label: "ชุดครัวไทย", name: "kitchen_furniture", icon: "kitchen furniture.png", folder: "utility" },
+            { label: "ครัวไทย", name: "kitchen_furniture", icon: "kitchen furniture.png", folder: "utility" },
             { label: "อุปกรณ์ชุดครัว", name: "countertop", icon: "countertop.png", folder: "utility" },
+            { label: "ครัวฝรั่ง (Pantry)", name: "pantry", icon: "pantry.png", folder: "utility" },
             { label: "ฉากกั้นอาบน้ำ", name: "Shower_Enclosures", icon: "shower enclosure.png", folder: "utility" },
             { label: "งานจัดสวน", name: "gardening", icon: "gardening.png", folder: "utility" },
             { label: "รางน้ำ", name: "gutters", icon: "gutters.png", folder: "utility" },
-            { label: "ชุดครัวเตรียมอาหาร", name: "pantry", icon: "pantry.png", folder: "utility" },
             { label: "ท่อ uPVC สำหรับติดตั้งโซลาร์เซลล์", name: "upvc", icon: "upvc conduit pipe.png", folder: "utility" },
             { label: "ครีบกันดินทรุด (ฟิน) ", name: "retaining", icon: "retaining wall.png", folder: "utility" },
         ],
