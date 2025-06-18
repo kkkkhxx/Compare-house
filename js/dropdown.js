@@ -78,7 +78,7 @@ function renderFormGroups() {
             }
             else {
                 const clone = template.content.cloneNode(true);
-                clone.querySelector('img').src = `/assets/icon/${opt.folder}/${opt.icon}`;
+                clone.querySelector('img').src = `assets/icon/${opt.folder}/${opt.icon}`;
                 clone.querySelector('img').alt = opt.label;
                 clone.querySelector('label').textContent = opt.label;
                 clone.querySelector('input[type="checkbox"]').name = opt.name;
