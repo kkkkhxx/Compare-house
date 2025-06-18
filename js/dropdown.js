@@ -37,7 +37,7 @@ function renderFormGroups() {
                 row = document.createElement('div');
                 row.className = 'form-row';
                 row.innerHTML = `<div class="icon">
-            <img src="/assets/icon/${opt.folder}/${opt.icon}" alt="${opt.label}"></div>
+            <img src="assets/icon/${opt.folder}/${opt.icon}" alt="${opt.label}"></div>
             <label>${opt.label}</label>
             <input type="text" name="${opt.name}" placeholder="กรอกข้อมูล">`;
             }
@@ -48,7 +48,7 @@ function renderFormGroups() {
                 const iconDiv = document.createElement('div');
                 iconDiv.className = 'icon';
                 const icon = document.createElement('img');
-                icon.src = `/assets/icon/${opt.folder}/${opt.icon}`;
+                icon.src = `assets/icon/${opt.folder}/${opt.icon}`;
                 icon.alt = opt.label;
                 iconDiv.appendChild(icon);
 
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const preview = document.getElementById("image_preview");
             if (preview && home.imageName) {
-                preview.src = `/assets/photo/${home.imageName}`;
+                preview.src = `assets/photo/${home.imageName}`;
                 preview.style.display = "block";
             }
         }
