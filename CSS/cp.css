@@ -137,6 +137,49 @@ img {
 
 }
 
+.print button {
+    margin: 10px 0 30px 0;
+    padding: 10px 20px;
+    background-color: #0a9dff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.print {
+    display: flex;
+    justify-content: center;
+}
+
+/*---------------------- pdf ----------------------*/
+@media print {
+    body>* {
+        display: none !important;
+    }
+
+    main {
+        display: block !important;
+    }
+
+    main * {
+        visibility: visible !important;
+    }
+
+    .dropdown-content {
+        max-height: unset !important;
+        overflow: visible !important;
+    }
+
+    .group-block {
+        page-break-before: always;
+    }
+
+    .compare-result {
+        box-shadow: none
+    }
+}
+
 /*---------------------- เว็บไซต์ ----------------------*/
 @media (min-width: 768px) {
     main {
