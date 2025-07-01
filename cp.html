@@ -29,7 +29,34 @@
         </div>
     </main>
 
+    <div class="print">
+        <button onclick="prepareAndPrint()">📄พิมพ์ / บันทึก PDF</button>
+    </div>
+
     <footer></footer>
+
+    <script>
+        function prepareAndPrint() {
+            // ✅ เปิด dropdown ทุกอัน
+            document.querySelectorAll(".dropdown-content").forEach(dc => {
+                dc.style.maxHeight = dc.scrollHeight + "px";
+                dc.classList.add("open");
+            });
+
+            setTimeout(() => {
+                window.print();
+
+                // ✅ ปิด dropdown หลังพิมพ์ (รอ 3 วินาที เผื่อ iPhone ไม่ trigger onafterprint)
+                setTimeout(() => {
+                    document.querySelectorAll(".dropdown-content").forEach(dc => {
+                        dc.style.maxHeight = "";
+                        dc.classList.remove("open");
+                    });
+                }, 3000);
+            }, 500);
+        }
+    </script>
+    
 </body>
 <script src="component/loadFooter.js"></script>
 <script src="component/loadHeader.js"></script>
